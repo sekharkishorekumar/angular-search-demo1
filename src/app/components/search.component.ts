@@ -30,6 +30,9 @@ export class SearchComponent implements OnInit {
             data = data.slice(0, 20);
           }
           this.searchResult = data;
+          if(this.searchResult.length === 0) {
+            this.errorMessage = "No items are found...Thanks"
+          }
           console.log(this.searchResult);
         });
     } else if (searchValue.continent === "") {
